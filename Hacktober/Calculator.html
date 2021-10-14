@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+        <style>
+            table{
+                background-color:lightgoldenrodyellow;
+            }
+            
+            .long{
+                width:200px;
+                text-align: center;
+                margin:5px;
+            }
+            
+            .number{
+                width:50px;
+                font-weight: bold;
+                text-align: center;
+                margin-left: 5px;
+            }
+        </style>
+        
+        <script>
+            function string(val)
+            {
+                var x=document.getElementById("ans");
+                x.value=x.value+val;
+            }
+            
+            function solve(){
+                var x=document.getElementById("ans").value;
+                document.getElementById("ans").value=eval(x);
+            }
+            
+            function clr()
+            {
+                document.getElementById("ans").value="";
+            }
+            
+            function back()
+            {
+                var ctrlAns=document.getElementById("ans");
+                ctrlAns.value=ctrlAns.value.slice(0,ctrlAns.value.length-1);
+            }
+        </script>
+    </head>
+    <body>
+    <center>
+        <table rules="all" border="1" cellpadding="10">
+            <tr>
+                <td colspan="3">
+                    <input type="text" class="long" id="ans">
+                </td>
+                
+                <td>
+                    <center>
+                    <input type="button" value="AC" onclick="clr();">
+                    </center>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <input type="button" value="1" class="number" onclick="string('1');">
+                </td>
+                
+                <td>
+                    <input type="button" value="2" class="number" onclick="string('2');">
+                </td>
+                
+                <td>
+                    <input type="button" value="3" class="number" onclick="string('3');">
+                </td>
+                
+                <td>
+                    <input type="button" value="+" class="number" onclick="string('+');">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <input type="button" value="4" class="number" onclick="string('4');">
+                </td>
+                
+                <td>
+                    <input type="button" value="5" class="number" onclick="string('5');">
+                </td>
+                
+                <td>
+                    <input type="button" value="6" class="number" onclick="string('6');">
+                </td>
+                
+                <td>
+                    <input type="button" value="-" class="number" onclick="string('-');">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <input type="button" value="7" class="number" onclick="string('7');">
+                </td>
+                
+                <td>
+                    <input type="button" value="8" class="number" onclick="string('8');">
+                </td>
+                
+                <td>
+                    <input type="button" value="9" class="number" onclick="string('9');">
+                </td>
+                
+                <td>
+                    <input type="button" value="*" class="number" onclick="string('*');">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <input type="button" value="0" class="number" onclick="string('0');">
+                </td>
+                
+                <td>
+                    <input type="button" value="." class="number" onclick="string('.');">
+                </td>
+                
+                <td>
+                    <input type="button" value="<--" class="number" onclick="back();">
+                </td>
+                
+                <td>
+                    <input type="button" value="/" class="number" onclick="string('/');">
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="3">
+                    <input type="button" value="=" class="long" onclick="solve();">
+                </td>
+                
+                <td>
+                    <center>
+                        <input type="button" value="%" class="number" onclick="string('%');">
+                    </center>
+                </td>
+            </tr>
+        </table>
+    </center>
+    </body>
+</html>
